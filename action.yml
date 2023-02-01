@@ -1,11 +1,9 @@
 name: 'Ctrain68'
-description: 'Testing_actions'
-author: 'My Name'
-inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+description: 'Git Diff for mono repo'
+author: 'Goodna Gang'
+outputs:
+  to_build:
+    description: 'json object of which apps to build'
 runs:
   using: 'node16'
   main: 'dist/index.js'
