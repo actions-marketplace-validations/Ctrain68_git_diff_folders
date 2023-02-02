@@ -2,6 +2,7 @@ import * as core from '@actions/core'
 import * as fs from 'fs'
 import { exec } from 'async-shelljs'
 
+const folderstoCheck = core.getInput("folders")
 const isBackend = (n: string) => !(n.endsWith('portal') || n == 'va-customer')
 const compareItems = (a: Item, b: Item) =>  
   a.TYPE == b.TYPE && a.IMAGE_NAME == b.IMAGE_NAME
@@ -50,7 +51,9 @@ const run = (folders: string[]) => {
   return [changed, unchanged]
 }
 
-run(["src", ".github"])
+let blah = run([folderstoCheck])
+
+core.setOutput('folder_output', blah )
 
 
 // async function run(): Promise<void> {
